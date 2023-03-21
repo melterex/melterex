@@ -1,0 +1,90 @@
+{% extends 'main/baza.html' %}
+
+{% block title %}да{% endblock %}
+{% block style %}
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        height: 100vh;
+    }
+    .modal_container
+    {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.381);
+        top: 0;
+    }
+    .modal {
+        min-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding: 30px;
+        flex-direction: column;
+    }
+    .modal span
+    {
+        transform: translate(-160px, -20px);
+    }
+    .modal form{
+        display: flex;
+        flex-direction: column;
+    }
+    .modal_container_hidden
+    {
+        visibility: hidden;
+        opacity: 0;
+    }
+    .modal_container_active
+    {
+        visibility: visible;
+        opacity: 1;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<form method="post" class="container_reg_form" novalidate>
+{% csrf_token %}
+{{ comp_form.as_p }}
+<button type="sumbit" name="competition">Отправить</button>
+</form>
+<br>
+<br>
+<button class="button_open">открыть желуддок</button>
+<div class="modal_container modal_container_hidden">
+    <div class="modal">
+        <span class="close_">Закрыть</span>
+        <form method="post" class="container_reg_form" novalidate>
+            {% csrf_token %}
+            {{ task_form.as_p }}
+            <button type="sumbit" name="task">Отправить</button>
+        </form>
+    </div>
+</div>
+<script>
+    let button_open = document.querySelector(".button_open");
+    let modal = document.querySelector(".modal_container");
+    let close_ = document.querySelector(".close_");
+    console.log(button_open, modal, close_)
+
+    button_open.addEventListener("click", () => {
+        modal.classList.remove("modal_container_hidden");
+        modal.classList.add("modal_container_active");
+    });
+    close_.addEventListener("click", () => {
+        modal.classList.remove("modal_container_active");
+        modal.classList.add("modal_container_hidden");
+    });
+</script>
+{% endblock %}

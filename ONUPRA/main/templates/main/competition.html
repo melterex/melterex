@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Соревнования{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/competition.css' %}">
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="wrapper-content">
+            <div class="competition_present">
+                <div class="competition_span">Еще актуальны</div>
+                {% for i in comp %}
+                    <a href="/competition/{{i.id}}"><div class="competition_block">
+                        <div class="competition_block_info">
+                            <div class="competition-text">
+                                <div class="block-icon">
+                                    <i class='bx bx-code-alt' ></i>
+                                <div class="text-info">
+                                    <span class="name">{{i.title}}</span>
+                                    <span class="info">Все классы</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="competition_block_info_ code">
+                            <span>Автор: Onupra</span>
+                            <span>Начинается {{i.start_time}}</span>
+                        </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="competition_present">
+                <div class="competition_span">Предыдущие соревнования</div>
+                {% for i in past_comp %}
+                    <a href="/competition/{{i.id}}"><div class="competition_block">
+                        <div class="competition_block_info">
+                            <div class="competition-text">
+                                <div class="block-icon">
+                                    <i class='bx bx-code-alt' ></i>
+                                <div class="text-info">
+                                    <span class="name">{{i.title}}</span>
+                                    <span class="info">Все классы</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="competition_block_info_ code">
+                            <span>Автор: Onupra</span>
+                            <span>Проходило {{i.start_time}}</span>
+                        </div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

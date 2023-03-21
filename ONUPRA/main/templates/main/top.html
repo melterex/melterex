@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block title %}Глобальный рейтинг{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/top.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="wrapper">
+        <div class="wrapper_content">
+            <div class="container_home_text">
+                <span class="global_text">Глобальный рейтинг</span>
+                <div class="search_container">
+                    <input type="text" placeholder="Найти..." id="elastik">
+                    <span class="icon_">
+                        <i class='bx bx-search'></i>
+                    </span>
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <td class="position">Место</td>
+                    <td class="position__user_home">Пользователь</td>
+                    <td class="position__user__reiting">Рейтинг</td>
+                </thead>
+                <tbody class="elastik page">
+                    {% for i in users %}
+                        <tr class="string" style="display: none;">
+                            <td class="position">
+                                <a style="text-decoration: none;" href="{% url 'account' i.slug %}">
+                                    {{ forloop.counter }}
+                                </a>
+                            </td>
+                            <td class="position__user">
+                                <a style="text-decoration: none;" href="{% url 'account' i.slug %}">
+                                    {{ i.username }}
+                                </a>
+                            </td>
+                            <td class="position__user__reiting">
+                                <a style="text-decoration: none;" href="{% url 'account' i.slug %}">
+                                    {{ i.rating }}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tbody class="elastik list_pagination" id="list_pagination"></tbody>     
+            </table>
+                <div class="paginator" onclick="pagination(event)"></div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}<script src="{% static 'main/js/top.js' %}"></script>{% endblock %}

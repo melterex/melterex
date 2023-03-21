@@ -1,0 +1,37 @@
+{% extends 'main/baza.html' %}
+
+{% block title %}Custom user page{% endblock %}
+
+{% block content %}    
+<div class="container__regestration">
+    <form method="post" class="container_reg_form" novalidate enctype="multipart/form-data">
+        {% csrf_token %}
+        имя
+        <input type="text" name="username" value={{request.user.username}}>
+        картинка
+        <input type="email" name="email" value={{request.user.email}}>
+        фота
+        <input type="file" name="image">
+        <!-- <div>{{ form.image }}</div> -->
+        <!-- <div>{{ form.password }}</div> -->
+        <button type="sumbit" name="editbtn">Отправить</button>
+        <div>{{error}}</div>
+    </form>
+    <form method="post" class="container_reg_form" novalidate>
+        {% csrf_token %}
+        удал аккаунт
+        <button type="sumbit" name="deletbtn">Удал</button>
+    </form>
+    <form method="post" class="container_reg_form" novalidate>
+        {% csrf_token %}
+        пароль
+        старый
+        <input type="password" name="old_password">
+        новый
+        <input type="password" name="new_password">
+        новый2
+        <input type="password" name="new_password_repeat">
+        <button type="sumbit" name="changepswd">ок</button>
+    </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+:root
+{
+    --background-color: #2E2E2E;
+    --background-color-wrapper: #1F1F1F;
+    --background-color-data: #272727;
+    --select-btn: #E7E7E7;
+    --cow-2-1: #474747;
+    --task-wrong: #f4adb59a;
+    --task-right: #20bab062;
+    --task: #DCD9D9;
+    --upload-input-container: 3px dashed #272727;
+    --bxl-dropbox: #272727;
+    --text-header: #fff;
+    --span-block: #fff;
+    --cow-1-1: #fff;
+    --button-task: #272727;
+    --tab: #706F6F;
+}
+::selection{
+    background: #2E2E2E;
+    color: #fff;
+}

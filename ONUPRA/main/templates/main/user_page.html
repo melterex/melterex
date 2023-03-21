@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+
+{% block title %}User page{% endblock %}
+
+{% block body %}
+    <div class="container_body">
+        <div class="container">
+            <div class="nav_menu_user">
+                <ul class="spisok_nav_menu_user">
+                   <li class="chapter_nav_menu_user">{{user.username}}</li>
+                   <li class="chapter_nav_menu_user">НАСТРОЙКИ</li>
+                   <li class="chapter_nav_menu_user">СОРЕВНОВАНИЯ</li>
+                   <li class="chapter_nav_menu_user">ПОПЫТКИ</li>
+                </ul>
+            </div>
+            <div class="user_info_chapter">
+                <div class="block_info_user_chapter">
+                    <div class="block_text_info">
+                        <span class="status">STATUS</span>
+                        <div class="pisda_naebal">
+                            <span class="USER_NAME">{{user.username}}
+                            </span>
+                            <form method="post" class="container_reg_form" novalidate>
+                                {% csrf_token %}
+                                имя
+                                <input type="text" name="username">
+                                <button type="sumbit" name="change username">Отправить</button>
+                            </form>
+                        </div>
+                        <div class="pisda">
+                            <i></i>
+                            <span>Рейтинг: <span>{{user.rating}}</span> <span>(макс. <span>000</span>,<span>STATUS</span>)</span></span>
+                        </div>
+                        <div class="pisda">
+                            <i></i>
+                            <span><a href="">Мои друзья</a></span>
+                        </div>
+                        {% if request.user.username == user.username %}
+                        <div class="pisda">
+                            <i></i>
+                            <span><a href="{% url 'edit' %}">Изменить настройки</a></span>
+                        </div>
+                        <div class="pisda">
+                            <i></i>
+                            <span>{{user.email}}</span>
+                        </div>                        
+                        {% else %}
+                        {% endif %}
+                    </div>
+                    <div class="block_img_info">
+                        <img class="img_block_img_info" src="/media/{{user.image}}" alt="">
+                        {% if request.user.username == user.username %}
+                        <form method="post" class="container_reg_form" novalidate enctype="multipart/form-data">
+                            {% csrf_token %}
+                            фота
+                            <input type="file" name="image">
+                            <button type="sumbit" name="update image">Отправить</button>
+                        </form>
+                        <form method="post" class="container_reg_form" novalidate>
+                            {% csrf_token %}
+                            <button type="sumbit" name="reset image">сброс</button>
+                        </form>
+                        {% else %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form method="post" class="container_reg_form" novalidate enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form}}
+        {{form2}}
+        <button type="sumbit" name="new post">сброс</button>
+    </form>
+    {% for article in articles %} 
+    <h1>{{ article.text }}</h1>
+    <h2>{{ article.creation_date }}</h2>    
+        {% for i in article.files.all %}
+        <img src="/media/{{ i.files }}"/>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reg_form_o.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <a href="{% url 'home' %}"><i class='bx bx-arrow-back'></i></a>
+    <svg id="visual" viewBox="0 0 1920 1080" width="1920" height="1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="1920" height="1080" fill="#91BFBC"></rect><defs><linearGradient id="grad1_0" x1="43.8%" y1="0%" x2="100%" y2="100%"><stop offset="14.444444444444446%" stop-color="#558987" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#558987" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_1" x1="43.8%" y1="0%" x2="100%" y2="100%"><stop offset="14.444444444444446%" stop-color="#558987" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#699b98" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_2" x1="43.8%" y1="0%" x2="100%" y2="100%"><stop offset="14.444444444444446%" stop-color="#7dadaa" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#699b98" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_3" x1="43.8%" y1="0%" x2="100%" y2="100%"><stop offset="14.444444444444446%" stop-color="#7dadaa" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#91bfbc" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="56.3%" y2="100%"><stop offset="14.444444444444446%" stop-color="#558987" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#558987" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_1" x1="0%" y1="0%" x2="56.3%" y2="100%"><stop offset="14.444444444444446%" stop-color="#699b98" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#558987" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_2" x1="0%" y1="0%" x2="56.3%" y2="100%"><stop offset="14.444444444444446%" stop-color="#699b98" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#7dadaa" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_3" x1="0%" y1="0%" x2="56.3%" y2="100%"><stop offset="14.444444444444446%" stop-color="#91bfbc" stop-opacity="1"></stop><stop offset="85.55555555555554%" stop-color="#7dadaa" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(1920, 0)"><path d="M0 702C-119.6 679.3 -239.2 656.7 -347 601C-454.8 545.4 -550.8 456.7 -607.9 351C-665.1 245.3 -683.6 122.7 -702 0L0 0Z" fill="#87b6b3"></path><path d="M0 526.5C-89.7 509.5 -179.4 492.5 -260.2 450.8C-341.1 409 -413.1 342.5 -456 263.3C-498.9 184 -512.7 92 -526.5 0L0 0Z" fill="#73a4a1"></path><path d="M0 351C-59.8 339.7 -119.6 328.3 -173.5 300.5C-227.4 272.7 -275.4 228.3 -304 175.5C-332.6 122.7 -341.8 61.3 -351 0L0 0Z" fill="#5f9290"></path><path d="M0 175.5C-29.9 169.8 -59.8 164.2 -86.7 150.3C-113.7 136.3 -137.7 114.2 -152 87.8C-166.3 61.3 -170.9 30.7 -175.5 0L0 0Z" fill="#558987"></path></g><g transform="translate(0, 1080)"><path d="M0 -702C112.4 -666.9 224.8 -631.7 333.5 -577.6C442.2 -523.5 547.2 -450.4 607.9 -351C668.7 -251.6 685.4 -125.8 702 0L0 0Z" fill="#87b6b3"></path><path d="M0 -526.5C84.3 -500.2 168.6 -473.8 250.1 -433.2C331.6 -392.6 410.4 -337.8 456 -263.3C501.6 -188.7 514 -94.3 526.5 0L0 0Z" fill="#73a4a1"></path><path d="M0 -351C56.2 -333.4 112.4 -315.9 166.7 -288.8C221.1 -261.8 273.6 -225.2 304 -175.5C334.4 -125.8 342.7 -62.9 351 0L0 0Z" fill="#5f9290"></path><path d="M0 -175.5C28.1 -166.7 56.2 -157.9 83.4 -144.4C110.5 -130.9 136.8 -112.6 152 -87.8C167.2 -62.9 171.3 -31.4 175.5 0L0 0Z" fill="#558987"></path></g></svg>
+        <div class="registration_set">
+            <span class="header_span">Настройки профиля</span>
+
+            <div class="field" id="form_nickname">
+            <form class="form_nickname">
+                <input type="text" class="input_regestration_user" name="" id="user_name" value="Никнейм">
+                <input type="submit" id="user_submit" class="unput_submit_nickname" value="~">
+            </form>    
+            <span class="error err email-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">Имя пользователя занято</p>
+            </span>
+            <span class="error err2 email-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">Имя пользователя не соответствует требованиям</p>
+            </span>
+            <span class="error err3 email-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">Заполните свой никнейм</p>
+            </span>
+            </div>
+            
+            <span style="font-size: 20px; color: #333;">Баллы за задачу по состояннию на <p style="margin-left: 5px;"></p> <p style="margin-left: 5px; margin-right: 5px;">-</p> <p style="color: #832020;"></p></span>
+
+            <form class="list_settings w_1 inactive_1">
+                <div class="list_settings__change a_1">
+                    <span>Редактировать почту</span>
+                    <i class='bx bx-right-arrow-alt bx-right-arrow-alt1' style="transform: rotate(0deg); transition: 0.3s; color: rgb(113, 112, 112);"></i>
+                </div>
+                <div id="oppacty1" style="transition: 0.4s; opacity: 0;">
+                    <div class="input_mail input_set field-icon" id="form_mail">
+                        <span>Ваша почта</span>
+                        <input type="text" class="input_regestration" name="" id="const_email" value="kslsider@gmail.com">
+                        <span class="error-absolute err email-error">
+                            <i class="bx bx-error-circle error-icon"></i>
+                        </span>
+                        <span title="Электронная почта не подходит по требованиям" class="error-absolute err2 email-error">
+                            <i title="Электронная почта не подходит по требованиям" class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Электронная почта не подходит по требованиям</p> -->
+                        </span>
+                        <span class="error-absolute err3 email-error">
+                            <i title="Введите вашу почту!" class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Введите вашу почту!</p> -->
+                        </span>
+                    </div>
+                    <div class="input_password_repeat input_set" id="form_mail_password">
+                        <span>Введите ваш пароль</span>
+                        <div class="password-relative">
+                            <input type="password" class="input_regestration" name="" id="email_password">
+                            <i class='bx bx-hide show-hide'></i>
+                        </div>
+                    </div>
+                    <input type="submit" id="email_submit" class="button_submit_settings d-settings_1" value="Сохранить">
+                </div>
+            </form>
+
+
+            <form class="list_settings w_2 inactive_2" id="form_password">
+                <div class="list_settings__change a_2">
+                    <span>Редактировать пароль</span>
+                    <i class='bx bx-right-arrow-alt bx-right-arrow-alt2' style="transform: rotate(0deg);  transition: 0.2s; color: rgb(113, 112, 112);" ></i>
+                </div>
+
+                <div id="oppacty2" style="transition: 0.4s; opacity: 0;">
+                    <div class="input_password_repeat input_set field-icon" id="passwordValue">
+                        <span>Введите ваш пароль</span>
+                        <i class='bx bx-hide show-hide'></i>
+                        <input type="password" class="input_regestration" name="" id="const_password">
+                        <span class="error-absolute err email-error">
+                            <i class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Неправильный пароль</p> -->
+                        </span>
+                    </div>
+                    <div class="input_password_now input_set field-icon" id="passwordValueNew">
+                        <span>Введите ваш новый пароль</span>
+                        <i class='bx bx-hide show-hide'></i>
+                        <input type="password" class="input_regestration" name="" id="password_new">
+                        <span title="Пароль не подходит по требованиям" class="error-absolute err2 email-error">
+                            <i  class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Пароль не подходит по требованиям</p> -->
+                        </span>
+                        <span class="error-absolute err3 email-error">
+                            <i title="Введите ваш пароль!" class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Введите ваш пароль!</p> -->
+                        </span>
+                    </div>
+                    <div class="input_password_now_repeat input_set field-icon" id="CpasswordValueNew">
+                        <span>Повторите ваш новый пароль</span>
+                        <i class='bx bx-hide show-hide'></i>
+                        <input type="password" class="input_regestration" name="" id="Cpassword_new">
+                        <span title="Пароль не подходит по требованиям" class="error-absolute err2 email-error">
+                            <i  class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Пароли не совпадают</p> -->
+                        </span>
+                        <span class="error-absolute err3 email-error">
+                            <i title="Введите ваш пароль!" class="bx bx-error-circle error-icon"></i>
+                            <!-- <p class="error-text">Повторите свой пароль!</p> -->
+                        </span>
+                    </div>
+                </div>
+                    <input type="submit" id="password_submit" class="button_submit_settings d-settings" value="Сохранить">
+            </form>
+
+            <div class="line"></div>
+
+            <button class="delete_account open-popup">Удалить аккаунт</button>
+        </div>
+
+        <div class="popup__bg"> 
+            <form class="popup">
+                <i class='bx bx-x close-popup'></i>
+
+                <p></p>
+                <p></p>
+                <div class="input_password_repeat field">
+                    <span>Подтвердите свой пароль</span>
+                    <i class='bx bx-hide show-hide'></i>
+                    <input type="password" class="input_proverka input_regestration" name="" id="const_password">
+                    <span class="error err3 email-error">
+                        <i class="bx bx-error-circle error-icon"></i>
+                        <p class="error-text"> Неверный пароль</p>
+                    </span>
+                </div>
+
+                <button type="submit">Удалить аккаунт</button>
+            </form>
+        </div>
+            <script src="settings.js"></script>
+</body>
+</html>

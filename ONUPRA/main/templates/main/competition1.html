@@ -1,0 +1,38 @@
+{% extends 'main/baza.html' %}
+{% load mathfilters %}
+
+{% block title %}{{comp.title}}{% endblock %}
+
+{% block content %}    
+<div class="container__regestration">
+    {% for i in comp.tasks.all %}
+    <a href="{{i.id}}/">{{i.title}}</a>
+    <br>
+    {% endfor %}
+    </div>
+    <table border="2">
+        <tr>
+         <th>Никнейм</th>
+         {% for i in comp.tasks.all %}
+         <th>{{i.title}}</th>
+         {% endfor %}
+        </tr>
+        {% for i in comp.determined_users.all %}
+        <tr>
+            <td>{% for x in i.user.all %}{{x.username}}{% endfor %}</td>
+            {% for j in i.task.all %}
+              <th>{% for k in j.attempts.all|dictsortreversed:"points"|slice:":1" %}{{k.points}}{% endfor %}</th>
+            {% endfor %}
+            {% if comp.tasks.all|length > i.task.all|length %}
+              {% with answer=i.task.all|length %}
+              {% with ans=comp.tasks.all|length|sub:answer %}
+              {% with ''|center:ans as range %}
+                {% for k in range %}<th>{{0}}</th>{% endfor %}
+              {% endwith %}
+              {% endwith %}
+              {% endwith %}
+            {% endif %}
+        </tr>
+        {% endfor %}
+      </table>
+{% endblock %}
