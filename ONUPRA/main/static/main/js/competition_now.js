@@ -49,6 +49,10 @@ else{
     hourValue = Number(document.querySelector(".hours .number").textContent)
 
     const timeFunctin = setInterval(() => {
+        if (secValue == 0 && minValue == 0 && hourValue == 0){
+            alert("Соревнование закончилось, перезагрузите страницу!");
+            location.reload();
+        }
         if (secValue != 0){
             secValue--;
         }
