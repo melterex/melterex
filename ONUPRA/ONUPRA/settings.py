@@ -25,10 +25,9 @@ SECRET_KEY = 'django-insecure-48cu=1(5ln)ydmpn-%%e)0@*u+wel*tmfhdn59uss&6^_1$gj7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['onupra.online', '127.0.0.1',
-                 'www.onupra.online', '192.168.17.15', 'onupra.ru']
+ALLOWED_HOSTS = ['8168-31-211-1-3.eu.ngrok.io', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = [
-    'https://www.onupra.online', 'http://127.0.0.1:8000', '192.168.17.15', 'https://www.onupra.ru']
+    'https://8168-31-211-1-3.eu.ngrok.io', 'http://127.0.0.1:8000']
 
 # Application definition
 
