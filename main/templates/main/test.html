@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/favicon.ico' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form id="name-form" method="post">
+    <label for="name-input">Name:</label>
+    <input type="text" id="name-input" name="name">
+    <button type="submit">Submit</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // add event listener for form submit
+  $('#name-form').submit(function(e) {
+    e.preventDefault(); // prevent default form submission behavior
+
+    // get name input value
+    const name = $('#name-input').val();
+
+    // create AJAX request
+    $.ajax({
+      type: 'POST',
+      url: '',
+      headers: {
+        'X-CSRFToken': '{{ csrf_token }}'
+      },
+      data: {
+        'name': name
+      },
+      dataType: 'json',
+      success: function(response) {
+        console.log(response.message); // do something with response data
+      },
+    //   error: function(response) {
+    //     console.log('Error:', response);
+    //   }
+    });
+  });
+});
+</script>
+</body>
+</html>

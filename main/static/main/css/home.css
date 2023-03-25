@@ -1,0 +1,247 @@
+.wrapper_content_homee
+{
+    width: 80%;
+}
+.wrapper_content_home
+{
+    padding: 40px;
+    display: flex; 
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 6px;
+    font-size: 21px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+    margin-right: 10px;
+}
+.wrapper_content_home_faq
+{
+    padding: 40px;
+    display: flex; 
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 6px;
+    font-size: 21px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 10px;
+    margin-top: 15px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #FFF;
+}
+.social_spisok
+{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.social_spisok li
+{
+    list-style: none;
+    margin: 20px 10px 10px 10px;
+    cursor: pointer;
+    font-size: 25px;
+    color: #333;
+    border-radius: 50%;
+}
+.social
+{
+    font-size: 26px;
+}
+.wrapper_content_social
+{
+    padding: 20px;
+    display: flex; 
+    overflow: hidden;
+    justify-content: space-between;
+    border-radius: 6px;
+    font-size: 21px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 10px;
+    margin-top: 15px;
+    background-color: #FFF;
+}
+.FAQ
+{
+    font-size: 30px;
+    width: 55px;
+    height: 22px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center; 
+}
+.wrapper_content_home span 
+{
+    font-size: 30px;
+    width: 160px;
+    height: 19px;
+    display: flex;
+    align-items: center;     
+}
+.wrapper_content_home p
+{
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
+}
+.name
+{
+    color: #333;
+}
+.wrapper_content_info
+{
+    min-width: 320px;
+    margin-bottom: 16px;
+}
+.competition_block
+{
+    display: flex; 
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 6px;
+    font-size: 21px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+}
+.competition_span
+{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.competition_block_info
+{
+    background-color: #f9f9f9;
+    padding: 16px;
+    display: flex;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.competition_block_info_
+{
+    padding: 10px 15px 10px 15px;
+    font-size: 21px;
+    font-weight: 500;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: space-between;
+}
+.text-info
+{
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.competition-text
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.bx-code-alt
+{
+    font-size: 32px;
+    padding: 15px;
+    height: 60px;
+    border-radius: 6px;
+    background-color: #A5C3C1;
+}
+.competition_prezent
+{
+    margin-bottom: 20px;
+}
+.code
+{
+    background-color: #A5C3C1;
+}
+.icon_block_competition
+{
+    height: 100%;
+}
+.block-icon
+{
+    display: flex;
+}
+.Now_ihfo
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.more
+{
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px 0 0 10px;
+    border-top: 2px solid #DADADA;
+}
+.more span
+{
+    color: rgb(186, 186, 186);
+    transition: 0.2s;
+}
+.more span:hover
+{
+    color: rgb(160, 160, 160);
+}
+.block{
+    background-color:#f9f9f9;
+    margin: 10px 0;
+    border-radius: 10px;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.block header i{
+    font-size: 18px;
+    color: #333;
+    transition: all 0.1s linear;
+}
+.block header{
+    display: flex;
+    min-height: 35px;
+    padding: 0 15px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.1s linear;
+    border-bottom: 2px solid #f9f9f9;
+}
+.text{
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin: 12px 0;
+}
+.text-1{
+    height: 0;
+    opacity: 0;
+    font-size: 22px;
+    color: #333;
+    font-weight: 500;
+    padding: 0 15px;
+    transition: 0.3s linear;
+}
+.block.open header{
+    min-height: 35px;
+    border-bottom: 2px solid #DADADA;
+}
+.block.open .text-1
+{
+    padding: 15px;
+    opacity: 1;
+}
+.block.open{
+    padding-bottom: 10px;
+}
+
+.flex
+{
+    display: flex;
+    flex-direction: column;
+}

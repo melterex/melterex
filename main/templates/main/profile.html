@@ -1,0 +1,125 @@
+{% extends 'main/base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block title %}{{user.username}}{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'main/css/profile.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="wrapper_">
+        <div class="wrapper_content_profile">
+            <div class="wrapper_content_profile_">
+                <div class="block_avatar">
+                    <div class="img_settings">
+                        <img src="{{user.image.url}}" alt="">
+                    </div>
+                    {% if request.user.username == user.username %}
+                    <div class="avatar_upload open-popup op2">
+                        <span>Изменить</span>
+                        <i class='bx bx-pencil'></i>
+                    </div>
+                    {% else %}
+                    {% endif %}
+                </div>
+                <div class="block_info_profile">
+                    <div class="section_info_profile">
+                        <div id="company" class="input_block_div nickname nickname_js">{{user.username}}</div>
+                        <!-- <span class="rang">новичок</span> -->
+                        <span class="rang">{{user.rating}} очков рейтинга</span>
+                    </div>
+                    {% if request.user.username == user.username %}
+                    <div class="block_email">
+                        <i class='bx bx-envelope'></i>
+                        <span>{{user.email}}</span>
+                    </div>
+                    {% else %}
+                    {% endif %}
+            </div>   
+            </div>
+            <ul class="list_menu">
+                <a href="{% url 'edit' %}">
+                <li class="elem_spis"><i class='bx bxs-cog icon_spis'></i></li>
+                </a>
+            </ul>
+        </div>
+        <div class="block_content_profile">
+            <div class="schedule_block">
+                <span>График изменения рейтинга пользователя</span>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="friend">
+                <div class="friend_span">
+                    <span>Друзья</span>
+                    <i class='bx bx-heart'></i>
+                </div>
+                <div class="block_friend">
+                    <span>Пока что в разработке</span>
+                </div>
+            </div>
+    </div>
+    {% if request.user.username == user.username %}
+    <div class="popup__bg pbg2"> 
+        <div class="popup p2">
+            <i class='bx bx-x close-popup cp2'></i>
+            <div class="img_change">
+                <span>Изменение вашего аватара</span>
+                <div class="img_change_block">
+                    <div class="block_regual">
+                        <img src="{{user.image.url}}" alt="">
+                    </div>
+                </div>
+                <div class="input_container">
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="input_delete" name="reset image"><i class='bx bx-basket'></i></button>
+                    </form>
+                    <form method="post" class="change_photo" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label class="input_upload input_upload_" for="change_upload">Загрузить фото <i class='bx bx-upload bx-1'></i></label>
+                        <input type="file" accept="image" class="upload-photo upload-photo-file" id="change_upload" name="image">
+                        <label class="input_upload input_upload_save save_photo" for="const_upload">Сохранить фото<i class='bx bx-check bx-1'></i></label>
+                        <button type="submit" class="upload-photo" id="const_upload" name="update image"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    {% endif %}
+{% endblock %}
+{% block js %}<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+<script src="{% static 'main/js/profile.js' %}"></script>
+<script>const ctx = document.getElementById('myChart');
+
+    var chart = new Chart(ctx, {
+      type: 'line',
+    
+      data: {
+        labels: [{% for i in point %}'{{i.date}}',{% endfor %}],
+        datasets: [{
+            label: '',
+            data: [{% for i in point %}{{i.score}},{% endfor %}],
+            fill: false,
+            borderColor: '#91BFBC',
+            backgroundColor: '#91BFBC',
+            tension: 0.01,
+            pointBackgroundColor: '#91BFBC',
+            pointBorderColor: '#91BFBC',
+            order: 1,
+            spanGaps: false,
+            drawActiveElementsOnTop: false,
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          },
+          title: {
+            display: true,
+            text: 'Chart.js Line Chart'
+          }
+        }
+      },
+    });</script>{% endblock %}
