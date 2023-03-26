@@ -13,8 +13,8 @@
 <link rel="stylesheet" href="{% static 'main/css/home.css' %}">
 {% endblock %}
 {% block body %}
-<div class="wrapper">
-    <div class="wrapper_content_homee">
+<div class="wrapper wrapper_home">
+    <div class="wrapper_content_homee wrapper_content">
         <div class="wrapper_content_home">
             <span>Всем привет!</span>
             <p>Мы рады сообщить, что наш сайт Onupra проводит соревнования по спортивному программированию для всех желающих. Если вы хотите проверить свои силы в решении задач на знание языков программирования, алгоритмов и структур данных, то присоединяйтесь к нам и примите участие в соревнованиях.
@@ -138,7 +138,7 @@
             </div>
         </div>
     </div>
-        <div class="wrapper_content_info">
+        <div class="wrapper_content_info wrapper_content">
             <div class="wrapper_content_info_competition">
                 {% if comp %}
                 <a href="{% url 'сompetition' comp.id %}">
@@ -167,7 +167,9 @@
                         <span style="font-size: 23px;">beta v3.0</span>
                     </div>
                     <div class="competition_block_info">
-                        <span class="Now_ihfo">Что нового?</span>
+                        <div class="Now_ihfo_div">
+                            <span class="Now_ihfo">Что нового?</span>
+                        </div>
                         <ul>
                             <li>Страница настроек</li>
                             <li>Отправка кода текстом</li>

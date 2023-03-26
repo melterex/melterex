@@ -115,13 +115,17 @@
         <form class="popup base-popup">
             <i class='bx bx-x close-popup'></i>
             <span>Вы точно хотите выйти?</span>
-            <a class="confirmation_logout">
+            <a class="confirmation_logout" href="{% url 'logout' %}">
                 <p class="text_logout nav-text">Выйти</p>
             </a>
         </form>
     </div>
     <div class="blackout"></div>
     <script src="{% static 'main/js/base.js' %}"></script>
+    {% if request.user.is_authenticated %}
+    <script src="{% static 'main/js/logout.js' %}"></script>
+    {% else %}
+    {% endif %}
 {% block body %}{% endblock %}
 <!-- <script>
 let switchMode = document.getElementById("switchMode");
