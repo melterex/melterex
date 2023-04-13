@@ -1,8 +1,0 @@
-program Hello;
-var a,b,c:integer;
-begin
-readln(a);
-readln(b);
-c:= 180 - (a+b);
-writeln(c);
-end.

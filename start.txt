@@ -1,0 +1,5 @@
+celery -A ONUPRA beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
+python manage.py migrate
+
+celery -A ONUPRA worker -l INFO
+python manage.py migrate django_celery_results

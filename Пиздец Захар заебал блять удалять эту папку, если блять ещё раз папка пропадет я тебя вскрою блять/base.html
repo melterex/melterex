@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- ======== CSS ======== -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="" id="theme">
+    
+    <!-- ===== icons ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!-- ===== font ===== -->
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+             <!-- <a href="{% url 'accountREDIR' %}">
+                <div class="image-text">
+                    <span class="image">
+                        <img src="{{ request.user.image.url }}" alt="">
+                    </span>
+                    
+                    <div class="text logo-text">
+                        <span class="name">{{username}}</span>
+                        <span class="profession">{{user.rating}}</span>
+                    </div>
+                </div>
+            </a>  -->
+            <div class="image-input">
+                <div class="nav-link-profile">
+                    <a href="{% url 'login' %}" class="hover_active">
+                        <i class='bx bx-user icon-prof'></i>
+                        <span class="text-prof">Войти</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+        
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="{% url 'home' %}">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Главная</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{% url 'top' %}">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Топ</span>
+                        </a>
+                    </li>
+                    <!-- <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Друзья</span>
+                        </a>
+                    </li> -->
+                    <li class="nav-link">
+                        <div class="blocked">
+                            <i class='bx bxs-dizzy icon'></i>
+                            <span class="text">Друзья</span>
+                        </div>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{% url 'competitions' %}">
+                            <i class='bx bx-math icon'></i> 
+                            <span class="text nav-text">Соревнования</span>
+                        </a>
+                    </li> 
+                </ul>
+            </div>
+            <div class="bottom-content var cursor-p">
+                <li class="">
+                    <a id="confirmation_logout" class="confirmation_logout1">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Выйти</span>
+                    </a>
+                </li>
+            </div>
+            
+        </div>
+        <button class="header_burger-btn">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+    <div class="blackout"></div>
+    <div class="popup__bg"> 
+        <form class="popup base-popup">
+            <i class='bx bx-x close-popup'></i>
+            <span>Вы точно хотите выйти?</span>
+            <a class="confirmation_logout">
+                <p class="text nav-text">Выйти</p>
+            </a>
+        </form>
+    </div>
+    <div class="wrapper">
+        <textarea name="" id="textarea">SEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEGRG;IJsgihjbGSIHPJBGsijhbgwEDIJBgewjbiWGEFSJIBegwjibEGWSJBLKegwilbGEBIPJJgewsibhvpeGPBIUWegrubipegWSWSUPOHWEGpuohigewU;BIUJOERGWub;ioGEWRUPBBHHOOHEWGUBWgeubjigEWBUOJPGewpbijEGWUBOGEw</textarea>
+    </div>
+<script src="base.js"></script>
+<!-- <script>
+let switchMode = document.getElementById("switchMode");
+
+    switchMode.onclick = function () {
+        let theme = document.getElementById("theme");
+
+        if (theme.getAttribute("href") == "{% static 'main/css/light-mode.css' %}") {
+            theme.href = "{% static 'main/css/dark-mode.css' %}";
+        } else {
+            theme.href = "{% static 'main/css/light-mode.css' %}"
+        }
+    }
+    </script> -->
+</body>
+</html>
